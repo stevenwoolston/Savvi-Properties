@@ -1,0 +1,882 @@
+/*
+Theme Name: WWD BlankSlate
+Theme URI: http://www.woolston.com.au
+Author: Woolston Web Design
+Author URI: http://www.woolston.com.au
+Version: 1.1.0
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags:
+Text Domain: blankslate
+
+BlankSlate Bootstrap WordPress Theme 2011-2016 Woolston Web Design
+Distributed under the terms of the GNU GPL
+*/
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Josefin+Sans|Alegreya+Sans+SC);
+@import "css/_bootstrap.scss";
+@import "css/_core.scss";
+@import "_mixins.scss";
+
+body {
+	background-color: $color-primary-3;
+	font-family: $body-font, sans-serif;
+	font-size: 16px;
+	color: #fff;
+	line-height: 2em;
+
+	h1, h2, h3, h4, h5 {
+		color: #fff;
+	}
+
+	.page-wrap {
+    	background-image: url(images/bg-comingsoon.jpg);
+        @extend .cover-background-image;
+        background-position: 50% 0;
+
+		.transparent-text-container {
+			padding: 20px 20px 40px;
+			margin-top: 40px;
+			margin-bottom: 80px;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 45px 0 0;
+
+			.coming-soon-content {
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
+
+			.coming-soon-logo img {
+				width: auto;
+				margin: 20px auto;
+			}
+		}
+
+        .sidebar-container {
+			margin-top: 40px;
+
+            aside {
+
+                ul.xoxo {
+                    list-style-type: none;
+                    padding-left: 0;
+
+                    & > li {
+                        padding: 10px;
+
+                        h3 {
+
+                        }
+
+                        &:first-child {
+                            background-color: $btn-danger-bg;
+                            border: 1px solid $btn-danger-border;
+
+                            h3 {
+                                text-align: center;
+                                text-transform: uppercase;
+                            }
+
+                            .textwidget {
+                                text-align: center;
+
+                                a {
+                                    color: #fff;
+
+                                    &:link, &:active, &:visited {
+                                        text-decoration: underline;
+                                    }
+
+                                    &:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: $secondary-font, sans-serif;
+	font-weight: bold;
+	color: $color-secondary-2-4;
+
+	a {
+		color: $color-secondary-2-4;
+
+		&:hover {
+			color: $color-secondary-1-2;
+		}
+	}
+}
+
+.transparent-text-container {
+    @extend .transparent-container;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    padding: 20px 20px 20px 20px;
+}
+
+.custom-logo {
+	position: relative;
+	top: 10px;
+	z-index: 10;
+}
+
+#wp-nav-menu {
+	border-style: none;
+	margin: 5px auto;
+	z-index: 10;
+
+    .nav-logo-container {
+        padding: 0;
+        max-width: 100px;
+
+        .nav-logo {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.navbar-default {
+    background-color: transparent;
+
+	.navbar-nav {
+	    text-transform: capitalize;
+        margin-top: 40px;
+
+		> li > a {
+    	    font-family: $menu-font;
+    	    font-size: 1.8em;
+
+            &:active, &:link, &:visited {
+			    text-align: center;
+			    color: #fff;
+			    padding: 5px 25px !important;
+            }
+
+			&:hover {
+			    color: $savvi-gold;
+                font-weight: bold;
+			}
+
+			.caret {
+				margin-left: 15px;
+			}
+		}
+
+		> .open > a {
+    	    font-family: $menu-font;
+			background-color: $color-secondary-2-4 !important;
+
+			&:active, &:visited, &:link, &:hover {
+				color: #555;
+			}
+
+			&:hover {
+                font-weight: bold;
+				background-color: $color-secondary-2-4;
+			}
+		}
+
+		&.current-menu-item a {
+    	    font-family: $menu-font;
+	        font-size: 1.8em;
+			color: $savvi-gold;
+		}
+
+	}
+
+	.navbar-collapse {
+		border-width: 0;
+	}
+
+	.navbar-form {
+		border-width: 0;
+	}
+
+    .nav-call-us-button {
+        a {
+            &:link, &:active, &:hover, &:visited {
+                color: #fff;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        span.glyphicon {
+            margin-right: 10px;
+        }
+    }
+
+    .btn-group {
+
+        button {
+
+        }
+
+        .dropdown-menu {
+            border-radius: 0;
+            margin-top: -2px;
+            padding: 5px !important;
+
+            li {
+
+            }
+        }
+    }
+}
+
+.carousel-control {
+	display: none;
+}
+
+.carousel-indicators {
+	display: none;
+}
+
+.navbar {
+	min-height: auto;
+}
+
+.navbar-collapse {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+}
+
+.index-featured-content {
+	padding: 50px 0;
+	min-height: 900px;
+
+	.carousel {
+		padding: 50px 20px;
+
+		.jumbotron {
+			min-height: 450px;
+			padding: 50px 50px 100px;
+
+			h2 {
+				padding-bottom: 20px;
+			}
+		}
+	}
+}
+
+.index-hero {
+	background: no-repeat;
+	background-size: cover;
+	min-height: 620px;
+	padding: 80px 0 0;
+
+	p {
+		padding: 10px 0;
+		font-size: 1.2em;
+	}
+}
+
+.testimonials {
+	margin: 30px 0;
+
+	h1, h2, h3, h4, h5 {
+		color: $color-secondary-1-0;
+	}
+
+	.testimonial-container {
+		border-right: 5px solid $color-secondary-2-4;
+	}
+
+	.quote-character {
+		font-family: $secondary-font;
+		font-size: 5em;
+		color: $color-secondary-2-4;
+	}
+
+	.quote-owner {
+		font-size: 1.3em;
+		font-style: italic;
+		color: $color-secondary-2-4;
+	}
+}
+
+.home-content {
+
+	img {
+		display: none;
+	}
+
+	iframe {
+		display: none;
+	}
+}
+
+section {
+
+	&#branding {
+		height: 75px;
+
+		img {
+			height: 70px;
+		}
+	}
+
+	&#content {
+		padding: 20px;
+
+		img {
+			margin: 20px 0;
+			padding: 5px;
+			border: 2px solid #eee;
+
+			&.ajax-loader {
+				display: none;
+			}
+		}
+
+		article {
+
+			header {
+				padding: 5px 0 10px;
+				border-bottom: 1px solid #eee;
+			}
+
+			section.entry-content {
+				padding: 25px 0;
+				border-bottom: 1px solid #eee;
+
+				h1 {
+					margin-top: 0;
+				}
+
+				h2 {
+					margin-top: 0;
+					font-size: 2.3em;
+				}
+
+				h3 {
+					margin-top: 0;
+				}
+
+				h4 {
+					margin-top: 0;
+				}
+			}
+
+			footer.entry-footer {
+				padding: 10px 0;
+			}
+		}
+
+		footer.footer {
+			padding: 30px 0;
+
+			#nav-below {
+
+				.nav-previous {
+					float: left;
+				}
+
+				.nav-next {
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+.entry-meta {
+	float: right;
+	padding: 10px 5px;
+}
+
+.blog-image-caption {
+	font-family: $secondary-font, cursive;
+	font-size: 0.8em;
+	color: #fff;
+	z-index: 10;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+	background: #808080;
+	background: rgba(0, 0, 0, 0.5);
+
+	a {
+		color: #fff;
+		padding: 0 10px;
+	}
+}
+
+.slideshow-window {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0 !important;
+	border: 0 solid #dcdcdc !important;
+
+	img {
+		margin: 0 !important;
+	}
+
+	.slideshow-controls {
+		display: none;
+	}
+
+	.slideshow-slide-caption {
+		font-family: $secondary-font;
+		font-size: 0.9em;
+		font-weight: 600;
+		padding: 10px 20px;
+		z-index: 10;
+		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+		background: #b0b0b0;
+		background: rgba(0, 0, 0, 0.7);
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: left;
+		line-height: 20px;
+	}
+}
+
+.carousel-inner {
+	height: 60vh;
+
+	&.carousel-fade {
+
+		> {
+
+			.item {
+				height: 60vh;
+				opacity: 0;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: opacity 5s ease;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: translate3d(0, 0, 0) !important;
+			}
+
+			.active {
+				opacity: 1;
+				z-index: 3;
+
+				&.left {
+					z-index: 1;
+				}
+			}
+
+			.next.left {
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: opacity 1s ease-in-out;
+				opacity: 1;
+				left: 0;
+				z-index: 2;
+			}
+
+			.prev.right {
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: opacity 1s ease-in-out;
+				opacity: 1;
+				left: 0;
+				z-index: 2;
+			}
+		}
+
+		.active.right {
+			z-index: 1;
+		}
+	}
+
+	&.carousel-height {
+
+		> {
+
+			.item {
+				height: 0;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: height 2s ease;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: translate3d(0, 0, 0) !important;
+			}
+
+			.active {
+				height: 60vh;
+				z-index: 3;
+
+				&.left {
+					z-index: 1;
+				}
+			}
+
+			.next.left {
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: height 1s ease-in-out;
+				height: 1;
+				left: 0;
+				z-index: 2;
+			}
+
+			.prev.right {
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: height 1s ease-in-out;
+				height: 1;
+				left: 0;
+				z-index: 2;
+			}
+		}
+
+		.active.right {
+			z-index: 1;
+		}
+	}
+
+	> .item {
+		height: 60vh;
+	}
+}
+
+.comingsoon-recaptcha {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.flags-container {
+	background-color: rgba(255, 255, 255, 0.6);
+
+	label {
+		font-weight: 400;
+		font-size: 0.9em;
+	}
+
+	#flags {
+		margin: 2px 10px 0 0;
+		width: 250px !important;
+		float: right;
+
+		ul#sortable {
+			border: none;
+			color: #fff;
+			padding: 0;
+			float: right !important;
+
+			li {
+				height: auto;
+
+				a {
+					height: 100%;
+					font-size: 1em;
+
+					&:hover {
+						color: $font-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+img:not(.custom-logo) {
+	border: 0;
+
+	&.alignright {
+		height: auto;
+		width: auto;
+		float: right;
+		margin-left: 20px !important;
+
+		&:after {
+			clear: both;
+		}
+
+		&:before {
+			clear: both;
+		}
+	}
+
+	&.alignleft {
+		height: auto;
+		width: auto;
+		float: right;
+		float: left;
+		margin-right: 20px !important;
+
+		&:after {
+			clear: both;
+		}
+
+		&:before {
+			clear: both;
+		}
+	}
+}
+
+header .sprite {
+	float: right;
+}
+
+.footer .sprite {
+	float: left;
+	margin-right: 15px;
+}
+
+.nav > li {
+}
+
+footer#footer {
+	background-color: $color-primary-3;
+	color: #fff;
+	padding: 20px 10px;
+	border-top: 1px solid #777;
+    margin: -15px;
+
+	hr {
+		border-top: 1px solid #444;
+	}
+
+	h1, h2, h3, h4, h5 {
+		color: $color-secondary-1-0;
+		margin-top: 0;
+	}
+
+	a {
+
+		&:link, &:active, &:visited, &:hover {
+			color: #fff;
+		}
+	}
+
+	ul {
+
+		&.social-media-list {
+			list-style: none;
+
+			li {
+				height: 45px;
+
+				a {
+					color: #fff;
+				}
+			}
+		}
+
+		&.links-list {
+			list-style: none;
+
+			li {
+				height: 45px;
+
+				a {
+					color: #fff;
+				}
+			}
+		}
+
+		&.services-list li {
+			height: 30px;
+			font-family: $secondary-font;
+
+			a {
+				color: #fff;
+			}
+		}
+	}
+
+	.text-copyright {
+		padding: 0 0 20px 0;
+	}
+}
+
+.news-container .article-container {
+	padding: 20px;
+
+	.article-meta {
+		border-top: 1px solid #eee;
+		font-size: 0.8em;
+	}
+
+	.cover-background-image {
+		height: 250px;
+	}
+
+	&:not(:last-of-type) {
+		border-bottom: 4px solid $font-color;
+	}
+}
+
+.search .article-container {
+	padding: 0;
+}
+
+.blogroll img {
+	display: none;
+}
+
+.primary-content-container .secondary-content {
+	display: none;
+}
+
+.single table {
+	margin: 20px 0;
+	border: none;
+
+	tr td {
+		padding: 3px;
+		vertical-align: top;
+	}
+}
+
+#comments ul {
+	list-style: none;
+	padding-left: 0;
+
+	> li {
+		border-bottom: 1px solid $color-primary-0;
+		padding-bottom: 10px;
+	}
+
+	li img {
+		margin: 5px;
+		border: none;
+	}
+}
+
+//  Contact Form 7
+.wpcf7-response-output {
+    @extend .bg-danger;
+    @extend .text-danger;
+
+    &.wpcf7-validation-errors {
+        border: none;
+    }
+
+    &.wpcf7-mail-sent-ok {
+        @extend .bg-success;
+        @extend .text-success;
+    }
+}
+//  Responsive
+@include breakpoint(xs) {
+
+    body {
+        line-height: 1.5em;
+    }
+
+	#wp-nav-menu {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+	    background-color: $color-primary-3;
+
+        .navbar-toggle {
+            background-color: $color-primary-3;
+            color: #fff;
+            border-color: $color-primary-3;
+
+            .button-collapse-title {
+                position: absolute;
+                right: 40px;
+                top: 6px;
+            }
+
+            .icon-bar {
+                background-color: #fff;
+            }
+        }
+
+        .navbar-default .navbar-nav > li > a {
+        }
+
+		.navbar-collapse {
+			padding: 0 0 20px 0;
+		}
+
+        ul.main-menu-item {
+            margin: 0;
+            float: right;
+            width: 100%;
+
+            li {
+
+                a {
+                    text-align: right;
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        .nav-call-us-button {
+            margin-left: 20px;
+        }
+	}
+
+	.cover-background-image {
+		background-position: 70%;
+	}
+
+	#header .header-title {
+		font-size: 1.4em;
+		margin-top: 0;
+		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-shadow: -2px 4px 10px #444;
+	}
+
+	.slideshow-window .slideshow-slide-caption {
+		font-size: 0.8em;
+		padding: 5px 10px;
+	}
+
+	.footer .container-fluid .row .col-xs-12 p {
+		text-align: center;
+	}
+
+	body.coming-soon .page-wrap .transparent-text-container {
+		margin: 20px auto;
+	}
+
+	.comingsoon-recaptcha {
+		margin: auto;
+		width: auto;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(0.85);
+		//Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+		transform-origin: 0 0;
+	}
+}
+
+@include breakpoint(sm) {
+
+    .navbar-default .navbar-nav > li > a {
+        font-size: 1.4em;
+    }
+}
+
+@include breakpoint(md) {
+
+	.carousel-container {
+		border-right: none;
+	}
+
+	.carousel-sidebar {
+		border-top: 10px solid #202020;
+	}
+
+	#header .header-title {
+		font-size: 3em;
+	}
+
+}
+
+@include breakpoint(lg) {
+}

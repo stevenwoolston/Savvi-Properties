@@ -1,0 +1,196 @@
+@import "css/_variables";
+@import "../_mixins";
+
+* {
+    box-sizing: border-box !important;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cover-background-image {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    &.parallax {
+        background-attachment: fixed;
+    }
+}
+
+.sprite {
+    background-image: url('images/social-media-icons.png');
+    background-repeat: no-repeat;
+    width: 38px;
+    height: 38px;
+    margin: 0 3px;
+    
+    @media (max-width: 768px) {
+        zoom: 0.80;
+    }
+
+    @media (max-width: 320px) {
+        zoom: 0.50;
+    }         
+}
+
+.facebook-sprite {
+    background-position: -2px -2px
+}
+
+.linkedin-sprite {
+    background-position: -81px -41px;
+}
+
+.twitter-sprite {
+    background-position: -81px -41px;
+}
+
+.google-sprite {
+    background-position: -2px -81px;
+}
+
+.youtube-sprite {
+    background-position: -81px -81px;
+}
+
+/*    Bootstrap Override: */
+.table {
+    font-size: 0.8em;
+    
+    th {
+        font-size: 0.9em;
+        border-top: 1px;
+        background-color: $color-primary-0;
+        color: #fff;
+    }
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.dropdown-menu {
+    padding: 0 !important;
+}
+
+//    Jetpack Overrides
+div.sharedaddy h3.sd-title:before {
+    border-top: none !important;
+}
+
+.round-corners {
+    @include border-radius( $round-corner-radius );
+}
+
+.bordered {
+    box-shadow: 0 0 30px #000000;
+    border: 10px solid #202020;
+}
+
+.spaced {
+  margin-top: 30px;
+}
+
+.padded-large {
+  padding: 15px;
+}
+.padded-medium {
+  padding: 7.5px;
+}
+.padded {
+  padding: 5px;
+}
+
+blockquote {
+  padding: 10px 20px;
+  font-size: 0.8em;
+  margin: 40px 15px;
+  color: $color-complement-0;
+  border-left: 5px solid $color-complement-0;
+}
+
+//    Responsive Videos
+.embed-youtube {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+    
+    & iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }    
+}
+
+
+img:not(.custom-logo) {
+	border: 0;
+
+	&.alignright {
+		height: auto;
+		width: auto;
+		float: right;
+		margin-left: 20px !important;
+
+		&:after {
+			clear: both;
+		}
+
+		&:before {
+			clear: both;
+		}
+	}
+
+	&.alignleft {
+		height: auto;
+		width: auto;
+		float: right;
+		float: left;
+		margin-right: 20px !important;
+
+		&:after {
+			clear: both;
+		}
+
+		&:before {
+			clear: both;
+		}
+	}
+}
+
+.full-height {
+    position: relative;
+
+    .centre-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+//  Forms
+.required {
+
+    &:after {
+        content: "*";
+        @extend .text-danger;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+}
+
+input#search {
+    & + span > button.btn {
+        padding-top: 7px;
+    }
+}
